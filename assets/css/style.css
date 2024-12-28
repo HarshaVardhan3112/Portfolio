@@ -357,7 +357,10 @@ h6 {
   #hero {
     text-align: center;
     background: url("../img/logoH2.png") top right no-repeat;
-    background-size: cover;
+    background-size: contain;
+      /* Ensure the image fits inside the screen */
+      background-position: center center;
+      /* Center the image */
   }
 
   #hero h1 {
@@ -977,4 +980,14 @@ section {
 
 #footer .credits {
   font-size: 13px;
+}
+
+@media (max-width: 992px) {
+  #footer {
+    background: url("../img/contact_logo2.png") no-repeat center center;
+    background-size: contain;
+    /* Ensure the background image fits within the screen */
+    background-position: center center;
+    /* Center the image */
+  }
 }
