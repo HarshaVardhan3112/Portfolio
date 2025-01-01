@@ -984,7 +984,7 @@ section {
 
 @media (max-width: 992px) {
   #footer {
-    background: url("../img/contact_logo2.png") no-repeat center center;
+    background: url("../img/contact_logo1.png") no-repeat center center;
     background-size: contain;
     /* Ensure the background image fits within the screen */
     background-position: center center;
