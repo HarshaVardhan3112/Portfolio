@@ -638,92 +638,95 @@ section {
 
 
 
-/*--------------------------------------------------------------
-# Testimonials
---------------------------------------------------------------*/
-.testimonials .section-header {
-  margin-bottom: 40px;
+/* Achievements Section */
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
 }
 
-.testimonials .testimonials-carousel,
-.testimonials .testimonials-slider {
-  overflow: hidden;
+.achievement-card {
+ background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 150px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.testimonials .testimonial-item {
+.achievement-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-content {
+  padding: 20px;
   text-align: center;
-  
+  position: relative;
+  z-index: 1;
+  line-height: 1.5;
+    /* Consistent line spacing */
+  word-wrap: break-word;
+    /* Ensure long words break to the next line */
+  white-space: normal;
+    /* Ensure text wraps within the card */
+  padding: 0 10px;
+    /* Padding to avoid text touching the edges */
+
 }
 
-
-
-.testimonials .testimonial-item h3 {
-  font-size: 20px;
-  font-weight: bold;
-  margin: 10px 0 5px 0;
-  color: #111;
+.card-content .quote-icon-left,
+.card-content .quote-icon-right {
+  font-size: 24px;
+  color: rgba(0, 123, 255, 0.8);
 }
 
-.testimonials .testimonial-item h4 {
-  font-size: 14px;
-  color: #3e3333;
-  margin: 0 0 15px 0;
+.card-content i {
+  line-height: 0.75;
+  margin: 10px;
+  font-size: 24px;
 }
 
-.testimonials .testimonial-item .quote-icon-left,
-.testimonials .testimonial-item .quote-icon-right {
+.card-content i.quote-icon-left {
+  margin-left: 0;
+}
+
+.card-content i.quote-icon-right {
+  margin-right: 0;
+}
+
+.card-content:hover {
   color: rgb(0, 123, 255);
-  font-size: 26px;
 }
 
-.testimonials .testimonial-item .quote-icon-left {
-  display: inline-block;
-  left: -5px;
-  position: relative;
+.achievement-card:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 123, 255, 0.2), rgba(255, 255, 255, 0.2));
+  opacity: 0.5;
+  z-index: 0;
+  transition: opacity 0.3s ease;
 }
 
-.testimonials .testimonial-item .quote-icon-right {
-  display: inline-block;
-  right: -5px;
-  position: relative;
-  top: 10px;
-}
-
-.testimonials .testimonial-item p {
-  font-style: italic;
-  margin: 0 auto 15px auto;
-}
-
-.testimonials .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
-}
-
-.testimonials .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: #fff;
+.achievement-card:hover:before {
   opacity: 1;
-  border: 1px solid rgb(0, 123, 255);
 }
 
-.testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: rgb(0, 123, 255);
-}
-
-@media (min-width: 992px) {
-  .testimonials .testimonial-item  {
-    width: 80%;
-    margin:auto;
+@media (max-width: 768px) {
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
-}
-
-/* ======= Swiper Navigation Buttons ======= */
-
-.swiper-button-next, .swiper-button-prev {
-  color: rgb(0, 123, 255);
-  font-weight: 800;
-  
 }
 
 
